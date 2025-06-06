@@ -13,6 +13,6 @@ public class SpaceStone extends Stone{
 
     @Override
     public void usePower() {
-        System.out.println();
+        System.out.println("Manipulate all space " + super.toString());
     }
 }

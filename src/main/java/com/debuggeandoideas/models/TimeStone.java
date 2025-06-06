@@ -13,6 +13,6 @@ public class TimeStone extends Stone{
 
     @Override
     public void usePower() {
-
+        System.out.println("Control time" + super.toString());
     }
 }

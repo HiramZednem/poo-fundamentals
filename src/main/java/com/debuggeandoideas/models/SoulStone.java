@@ -13,6 +13,6 @@ public class SoulStone extends Stone{
 
     @Override
     public void usePower() {
-
+        System.out.println("Total control: " + super.toString());
     }
 }
