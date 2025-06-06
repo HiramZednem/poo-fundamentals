@@ -10,4 +10,9 @@ public class SpaceStone extends Stone{
     public SpaceStone(String color, String name, String location, Integer energyLevel, Integer numberOfSides) {
         super(COLOR, NAME, LOCATION, ENERGY_LEVEL);
     }
+
+    @Override
+    public void usePower() {
+        System.out.println();
+    }
 }

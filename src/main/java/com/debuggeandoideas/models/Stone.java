@@ -27,5 +27,5 @@ public abstract class Stone {
         this.numberOfSides = NUMBER_OF_SIDES;
     }
 
-
+    public abstract void usePower();
 }
