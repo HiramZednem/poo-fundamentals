@@ -10,7 +10,7 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-@ToString
+@ToString(callSuper = true)
 @Log
 public class MindStone extends Stone{
     private static final String COLOR = "Yellow";
