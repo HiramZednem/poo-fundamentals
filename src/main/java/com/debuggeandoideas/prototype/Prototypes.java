@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Prototypes {
     public static StonePrototype<MindStone> mindPrototype =
-            stone -> stone.getPrototype();
+            MindStone::getPrototype;
 
     public static StonePrototype<PowerStone> powerPrototype =
             stone -> stone.getPrototype();
