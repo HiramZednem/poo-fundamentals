@@ -1,19 +1,21 @@
 package com.debuggeandoideas;
 
-import com.debuggeandoideas.models.MindStone;
-import com.debuggeandoideas.prototype.Prototypes;
+import com.debuggeandoideas.factories.RealityStoneFactory;
+import com.debuggeandoideas.models.RealityStone;
+import com.debuggeandoideas.models.Stone;
+import com.debuggeandoideas.services.GauntletService;
 import com.debuggeandoideas.services.GauntletServiceImpl;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        final var mind = new MindStone();
-        System.out.println(mind);
-        System.out.println(System.identityHashCode(mind));
+        GauntletServiceImpl gauntletService = new GauntletServiceImpl();
 
-        final var mind2 = Prototypes.mindPrototype.buildPrototype(mind);
-        System.out.println(mind2);
-        System.out.println(System.identityHashCode(mind2));
+        System.setProperty("scope", "singleton");
+        Stone realityStone = new RealityStoneFactory().createStone();
+        gauntletService.setRealityStone((RealityStone) realityStone);
+        gauntletService.useGauntlet("reality");
+
     }
 }
