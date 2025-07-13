@@ -1,9 +1,15 @@
 package com.debuggeandoideas.services;
 
+import com.debuggeandoideas.models.MindStone;
+import com.debuggeandoideas.models.PowerStone;
 import com.debuggeandoideas.models.RealityStone;
+import com.debuggeandoideas.models.SoulStone;
+import com.debuggeandoideas.models.SpaceStone;
 import com.debuggeandoideas.models.Stone;
+import com.debuggeandoideas.models.TimeStone;
 import com.debuggeandoideas.singleton.RealityStoneSingleton;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.java.Log;
@@ -13,17 +19,17 @@ import java.util.Map;
 
 //@ServiceAdd commentMore actions
 @Log
-//@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class GauntletServiceImpl implements GauntletService {
 
-//    private final RealityStone realityStone = RealityStoneSingleton.getInstance();
-    private Stone mindStone;
-    private Stone powerStone;
-    private Stone realityStone;
-    private Stone soulStone;
-    private Stone spaceStone;
-    private Stone timeStone;
+    private MindStone mindStone;
+    private PowerStone powerStone;
+    private RealityStone realityStone;
+    private SoulStone soulStone;
+    private SpaceStone spaceStone;
+    private TimeStone timeStone;
 
     @Override
     public void useGauntlet(String stoneName) {

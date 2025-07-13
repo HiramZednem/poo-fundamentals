@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.java.Log;
 
 import java.io.Serializable;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @Setter
 @EqualsAndHashCode
 @ToString
+@Log
 public abstract class Stone implements Serializable
 {
 
@@ -33,4 +35,8 @@ public abstract class Stone implements Serializable
     }
 
     public abstract void usePower();
+
+    public void clear() {
+        log.info("Cleaning stone");
+    }
 }
