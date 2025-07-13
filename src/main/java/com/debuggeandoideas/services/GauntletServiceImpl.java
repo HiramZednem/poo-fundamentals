@@ -8,18 +8,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.java.Log;
 
+import java.lang.reflect.Field;
+import java.util.Map;
+
 //@ServiceAdd commentMore actions
 @Log
-@AllArgsConstructor
+//@AllArgsConstructor
+@NoArgsConstructor
 public class GauntletServiceImpl implements GauntletService {
 
 //    private final RealityStone realityStone = RealityStoneSingleton.getInstance();
-    private final Stone mindStone;
-    private final Stone powerStone;
-    private final Stone realityStone;
-    private final Stone soulStone;
-    private final Stone spaceStone;
-    private final Stone timeStone;
+    private Stone mindStone;
+    private Stone powerStone;
+    private Stone realityStone;
+    private Stone soulStone;
+    private Stone spaceStone;
+    private Stone timeStone;
 
     @Override
     public void useGauntlet(String stoneName) {
@@ -50,5 +54,20 @@ public class GauntletServiceImpl implements GauntletService {
             throw new IllegalStateException("You need to have all the stones to use full power");
         }
 
+    }
+
+    public void setStones(Map<String, Stone> stones) {
+        stones.forEach((fieldName, stone) -> {
+            try {
+                Field field = this.getClass().getDeclaredField(fieldName);
+                field.setAccessible(true);
+                field.set(this, stone);
+                log.info("Dependency Inyection of " + fieldName);
+                field.setAccessible(false);
+
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
