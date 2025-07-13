@@ -5,7 +5,7 @@ import com.debuggeandoideas.models.Stone;
 import com.debuggeandoideas.prototype.Prototypes;
 import com.debuggeandoideas.singleton.SoulStoneSingleton;
 
-public class SoulFactory extends ConfigurableStoneFactory {
+public class SoulStoneFactory extends ConfigurableStoneFactory {
 
     @Override
     public Stone createStone() {

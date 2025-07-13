@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-@ToString
+@ToString(callSuper = true)
 @Log
 public class SpaceStone extends Stone{
 

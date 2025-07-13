@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-@ToString
+@ToString(callSuper = true)
 @Log
 public class PowerStone extends Stone{
     private static final String COLOR = "Purple";
